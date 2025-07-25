@@ -10,7 +10,7 @@ import sys
 import json
 import traceback
 from datetime import datetime, timezone
-from typing import Dict, Any, Optional, Union
+from typing import Dict, Any, Optional
 from pathlib import Path
 import threading
 from functools import wraps
