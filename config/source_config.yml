@@ -1,0 +1,47 @@
+source_database:
+  oracle_db:
+    host: "prod-oracle-server.company.com"
+    port: 1521
+    service_name: "PRODDB"
+    username: "etl_user"
+    password: "${ORACLE_PROD_PASSWORD}"  # Environment variable
+    password_encrypted: false
+    
+    # Connection Pool Settings
+    pool_min: 2
+    pool_max: 10
+    pool_increment: 2
+    pool_timeout: 3600
+    
+    # Oracle Specific Settings
+    thick_mode: false
+    timezone: "UTC"
+    nls_parameters:
+      NLS_DATE_FORMAT: "YYYY-MM-DD HH24:MI:SS"
+      NLS_TIMESTAMP_FORMAT: "YYYY-MM-DD HH24:MI:SS.FF"
+      NLS_NUMERIC_CHARACTERS: ".,"
+    
+    # Connection Retry Settings
+    max_retry_attempts: 3
+    retry_backoff_factor: 2.0
+    connection_timeout: 30
+    
+    # SSL/Security Settings
+    ssl_enabled: false
+    ssl_cert_path: ""
+    ssl_key_path: ""
+    ssl_ca_path: ""
+  
+# Default Oracle Configuration
+default_oracle_config:
+  port: 1521
+  pool_min: 1
+  pool_max: 10
+  pool_increment: 1
+  pool_timeout: 3600
+  thick_mode: false
+  timezone: "UTC"
+  max_retry_attempts: 3
+  retry_backoff_factor: 2.0
+  connection_timeout: 30
+  ssl_enabled: false

@@ -195,9 +195,10 @@ def main():
             SELECT owner, object_name, object_type 
             FROM all_objects 
             WHERE object_type = :obj_type 
+            AND object_name LIKE '%LOAN%'
             AND ROWNUM <= :max_rows
         """
-        params = ('TABLE', 10)
+        params = ('TABLE', 50)
         results = db_manager.execute_query(query, params)
         
         print("Sample tables from all schemas:")

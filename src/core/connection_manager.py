@@ -15,7 +15,7 @@ import time
 # Add src to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.core.exception_handler import ETLException
+from src.exception import ETLException
 from src.util.logger import get_logger
 from src.util.encryption_util import decrypt_password
 
